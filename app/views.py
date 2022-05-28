@@ -35,5 +35,5 @@ def workdir_view(request):
     # который возвращает список файлов в рабочей
     # директории
     for root, dirs, files in os.walk("."):
-        return HttpResponse("; ".join(files))
+        return HttpResponse("; ".join(dirs) + '; ' + "; ".join(files))
     raise NotImplemented
